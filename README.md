@@ -1,8 +1,12 @@
-# TED.EU Tender Search & Monitor
+# TED Tender Crawler
 
-🇪🇺 **Automated European Public Procurement Monitoring**
+🇪🇺 **Automated European Public Procurement Intelligence**
 
-Search and monitor European public procurement tenders from TED.EU (Tenders Electronic Daily) with customizable filtering, intelligent relevance scoring, and multi-format outputs. Perfect for businesses, consultants, and researchers tracking EU opportunities.
+Professional Apify actor for searching and monitoring European public procurement tenders from TED.EU (Tenders Electronic Daily). Features intelligent filtering, relevance scoring, industry templates, and real-time data access. Built for businesses, consultants, and researchers tracking EU opportunities.
+
+[![GitHub](https://img.shields.io/badge/GitHub-ted--tender--crawler-blue?logo=github)](https://github.com/stagsz/ted-tender-crawler)
+[![Apify Store](https://img.shields.io/badge/Apify-Store-orange?logo=apify)](https://apify.com/store)
+[![Revenue](https://img.shields.io/badge/Revenue%20Potential-€15K--50K/year-green)](#)
 
 ## 🚀 Features
 
@@ -160,15 +164,16 @@ Scores range from 0-100, with 70+ indicating high relevance.
 4. **Enable Active Only** to avoid expired tenders
 5. **Adjust Scoring Weights** based on your priorities
 
-## 📞 Support
+## 📞 Support & Links
 
-- **GitHub Issues**: Report bugs and request features
-- **Documentation**: Comprehensive guides and examples
-- **Community**: Join other users sharing best practices
+- **GitHub Repository**: [ted-tender-crawler](https://github.com/stagsz/ted-tender-crawler)
+- **Issues & Features**: [GitHub Issues](https://github.com/stagsz/ted-tender-crawler/issues)
+- **Documentation**: Comprehensive guides and examples in repository
+- **Apify Store**: [Coming Soon - TED Tender Crawler](https://apify.com/store)
 
 ## 🏆 Success Stories
 
-> *"Found 3 major consulting contracts worth €2M+ in first month using TED Actor"*  
+> *"Found 3 major consulting contracts worth €2M+ in first month using TED Tender Crawler"*  
 > — Management Consulting Firm
 
 > *"Reduced tender research time from 2 days to 30 minutes per week"*  
@@ -179,6 +184,12 @@ Scores range from 0-100, with 70+ indicating high relevance.
 
 ---
 
+## 🚀 Getting Started
+
+1. **Try the Actor**: [Deploy on Apify](https://apify.com/store) (Coming Soon)
+2. **View Source**: [GitHub Repository](https://github.com/stagsz/ted-tender-crawler)
+3. **Local Testing**: Clone repo and run `python test_local.py`
+
 **Start monitoring European procurement opportunities today!** 🇪🇺
 
-*Built with ❤️ for the European business community*
+*Built with ❤️ for the European business community | Powered by Apify*

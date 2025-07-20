@@ -1,5 +1,5 @@
 {
-  "title": "TED.EU Tender Search Configuration",
+  "title": "TED Tender Crawler Configuration",
   "type": "object",
   "schemaVersion": 1,
   "properties": {

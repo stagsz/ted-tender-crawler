@@ -1,11 +1,16 @@
-# TED.EU Actor Deployment Guide
+# TED Tender Crawler Deployment Guide
+
+🇪🇺 **Professional Apify Actor Deployment Instructions**
+
+[![GitHub](https://img.shields.io/badge/Repository-ted--tender--crawler-blue?logo=github)](https://github.com/stagsz/ted-tender-crawler)
 
 ## 🚀 Deployment Commands
 
 ### 1. Local Testing
 ```bash
 # Test locally before deployment
-cd /mnt/c/Users/staff/anthropicFun/TED_Apify
+git clone https://github.com/stagsz/ted-tender-crawler.git
+cd ted-tender-crawler
 python test_local.py
 ```
 
@@ -55,11 +60,11 @@ apify push
 
 #### Title & Description
 ```
-Title: "TED.EU Tender Search & Monitor - European Procurement Intelligence"
+Title: "TED Tender Crawler - European Procurement Intelligence"
 
-Short Description: "Search European public procurement tenders with custom filtering, relevance scoring, and industry templates. Perfect for businesses seeking EU contracts."
+Short Description: "Professional Apify actor for searching European public procurement tenders with intelligent filtering, relevance scoring, and industry templates. Built for businesses, consultants, and researchers."
 
-Tags: "procurement, tenders, ted, european, business-intelligence, consulting, contracts, government, opportunities"
+Tags: "procurement, tenders, ted, european, business-intelligence, consulting, contracts, government, opportunities, crawler, monitor"
 ```
 
 #### Category Selection

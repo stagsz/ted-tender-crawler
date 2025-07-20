@@ -1,8 +1,8 @@
 {
   "actorSpecification": 1,
-  "name": "ted-eu-tender-search",
-  "title": "TED.EU Tender Search & Monitor",
-  "description": "Search and monitor European public procurement tenders from TED.EU with customizable filtering, relevance scoring, and multi-format outputs. Perfect for businesses, consultants, and researchers tracking EU opportunities.",
+  "name": "ted-tender-crawler",
+  "title": "TED Tender Crawler - European Procurement Intelligence",
+  "description": "Professional Apify actor for searching and monitoring European public procurement tenders from TED.EU with intelligent filtering, relevance scoring, and industry templates. Built for businesses, consultants, and researchers tracking EU opportunities.",
   "version": "1.0.0",
   "meta": {
     "templateId": "python-empty"
@@ -12,8 +12,8 @@
   "readme": "./README.md",
   "categories": ["BUSINESS", "ECOMMERCE"],
   "isPublic": true,
-  "seoTitle": "TED.EU Tender Search - European Procurement Opportunities",
-  "seoDescription": "Automated search and monitoring of European public procurement tenders with custom filtering, relevance scoring, and real-time data from TED.EU database.",
+  "seoTitle": "TED Tender Crawler - European Procurement Intelligence",
+  "seoDescription": "Professional Apify actor for automated search and monitoring of European public procurement tenders with intelligent filtering, relevance scoring, industry templates, and real-time data from TED.EU database.",
   "storages": {
     "dataset": {
       "actorSpecification": 1,

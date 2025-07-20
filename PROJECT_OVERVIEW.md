@@ -1,9 +1,13 @@
-# TED.EU Apify Actor Project
+# TED Tender Crawler Project
+
+🇪🇺 **Professional Apify Actor for European Procurement Intelligence**
+
+[![GitHub](https://img.shields.io/badge/Repository-ted--tender--crawler-blue?logo=github)](https://github.com/stagsz/ted-tender-crawler)
 
 ## 🎯 Project Structure
 
 ```
-TED_Apify/
+ted-tender-crawler/
 ├── 📋 Core Actor Files
 │   ├── main.py                 # Apify actor main script
 │   ├── ted_search_engine.py    # Generic TED search engine
@@ -17,15 +21,11 @@ TED_Apify/
 │   ├── DEPLOYMENT.md         # Deployment guide
 │   └── PROJECT_OVERVIEW.md   # This file
 │
-├── 🧪 Testing
-│   └── test_local.py         # Local testing script
-│
-└── 📁 SPIG-GMAB/            # Legacy files (archived)
-    ├── README.md
-    ├── spig_gmab_tender_monitor_clean.py
-    ├── ted_fgt_monitor*.py
-    └── superclaude-context-plan.md
+└── 🧪 Testing
+    └── test_local.py         # Local testing script
 ```
+
+**Repository**: https://github.com/stagsz/ted-tender-crawler
 
 ## 🚀 Ready for Deployment
 
@@ -47,14 +47,20 @@ The project is now clean and ready for Apify deployment:
 ## 📝 Next Steps:
 
 1. **Test locally**: `python test_local.py`
-2. **Deploy**: Follow `DEPLOYMENT.md` guide  
-3. **Monetize**: Set up pay-per-result pricing
-4. **Market**: Target consulting firms and SMEs
+2. **Deploy to Apify**: Follow `DEPLOYMENT.md` guide  
+3. **Publish to Store**: Set up pay-per-result pricing (€0.15-€0.25/tender)
+4. **Marketing**: Target consulting firms, SMEs, and research organizations
+5. **Monitor & Optimize**: Track usage and improve based on feedback
 
-## 📂 Archived Files:
+## 🔗 Key Links:
 
-The `SPIG-GMAB/` folder contains the original company-specific code that was used as foundation but is no longer needed for the generic actor.
+- **GitHub Repository**: https://github.com/stagsz/ted-tender-crawler
+- **Issues & Features**: https://github.com/stagsz/ted-tender-crawler/issues
+- **Apify Store**: Coming Soon - TED Tender Crawler
+- **Local Development**: Clone repo and run `test_local.py`
 
 ---
 
-**Ready to launch your profitable TED.EU monitoring service!** 🇪🇺💰
+**Ready to launch your profitable European procurement monitoring service!** 🇪🇺💰
+
+*Built for the global business community | Powered by Apify*
