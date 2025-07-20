@@ -20,6 +20,7 @@ apify login
 
 ### 3. Initialize & Deploy
 ```bash
+
 # Initialize project (if not done)
 apify init
 
