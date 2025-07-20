@@ -1,0 +1,142 @@
+{
+  "title": "TED.EU Tender Search Configuration",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "searchKeywords": {
+      "title": "Search Keywords",
+      "type": "array",
+      "description": "Keywords to search for in tender titles and descriptions",
+      "items": {
+        "type": "string"
+      },
+      "default": ["software", "consulting", "IT services"],
+      "editor": "stringList"
+    },
+    "cpvCodes": {
+      "title": "CPV Codes",
+      "type": "array",
+      "description": "Common Procurement Vocabulary codes to filter by (optional)",
+      "items": {
+        "type": "string"
+      },
+      "default": [],
+      "editor": "stringList"
+    },
+    "countries": {
+      "title": "Countries",
+      "type": "array",
+      "description": "ISO country codes to search in (e.g., DE, FR, IT, ES)",
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Z]{2}$"
+      },
+      "default": ["DE", "FR", "IT", "ES", "NL"],
+      "editor": "stringList"
+    },
+    "yearFrom": {
+      "title": "Year From",
+      "type": "integer",
+      "description": "Start year for publication date filter",
+      "minimum": 2020,
+      "maximum": 2030,
+      "default": 2024
+    },
+    "yearTo": {
+      "title": "Year To", 
+      "type": "integer",
+      "description": "End year for publication date filter",
+      "minimum": 2020,
+      "maximum": 2030,
+      "default": 2024
+    },
+    "activeOnly": {
+      "title": "Active Tenders Only",
+      "type": "boolean",
+      "description": "Only return tenders that are still open for submission",
+      "default": true
+    },
+    "minValue": {
+      "title": "Minimum Contract Value (EUR)",
+      "type": "integer",
+      "description": "Minimum estimated contract value in EUR (optional)",
+      "minimum": 0,
+      "default": 0
+    },
+    "maxResults": {
+      "title": "Maximum Results",
+      "type": "integer",
+      "description": "Maximum number of tenders to return",
+      "minimum": 1,
+      "maximum": 1000,
+      "default": 100
+    },
+    "industryTemplate": {
+      "title": "Industry Template",
+      "type": "string",
+      "description": "Pre-configured keyword sets for common industries",
+      "enum": [
+        "custom",
+        "it-software",
+        "construction",
+        "healthcare",
+        "consulting",
+        "engineering",
+        "environmental",
+        "education",
+        "transportation",
+        "energy"
+      ],
+      "default": "custom"
+    },
+    "outputFormat": {
+      "title": "Output Format",
+      "type": "string",
+      "description": "Format for the output data",
+      "enum": ["json", "csv", "excel"],
+      "default": "json"
+    },
+    "includeDocuments": {
+      "title": "Include Document Links",
+      "type": "boolean", 
+      "description": "Include links to tender documents when available",
+      "default": true
+    },
+    "scoringCriteria": {
+      "title": "Scoring Criteria",
+      "type": "object",
+      "description": "Custom scoring weights for relevance calculation",
+      "properties": {
+        "keywordMatch": {
+          "title": "Keyword Match Weight",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 40
+        },
+        "cpvMatch": {
+          "title": "CPV Code Match Weight", 
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 30
+        },
+        "countryMatch": {
+          "title": "Country Preference Weight",
+          "type": "integer", 
+          "minimum": 0,
+          "maximum": 100,
+          "default": 20
+        },
+        "valueMatch": {
+          "title": "Contract Value Weight",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 10
+        }
+      }
+    }
+  },
+  "required": ["searchKeywords", "countries", "yearFrom", "yearTo"]
+}

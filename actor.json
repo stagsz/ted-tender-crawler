@@ -1,0 +1,57 @@
+{
+  "actorSpecification": 1,
+  "name": "ted-eu-tender-search",
+  "title": "TED.EU Tender Search & Monitor",
+  "description": "Search and monitor European public procurement tenders from TED.EU with customizable filtering, relevance scoring, and multi-format outputs. Perfect for businesses, consultants, and researchers tracking EU opportunities.",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "python-empty"
+  },
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "categories": ["BUSINESS", "ECOMMERCE"],
+  "isPublic": true,
+  "seoTitle": "TED.EU Tender Search - European Procurement Opportunities",
+  "seoDescription": "Automated search and monitoring of European public procurement tenders with custom filtering, relevance scoring, and real-time data from TED.EU database.",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "TED Tender Results",
+      "description": "Filtered and scored tender opportunities from TED.EU",
+      "views": {
+        "overview": {
+          "title": "Tender Overview",
+          "transformation": {
+            "fields": [
+              "notice_id",
+              "title",
+              "buyer_name", 
+              "country",
+              "publication_date",
+              "deadline_date",
+              "estimated_value_eur",
+              "relevance_score",
+              "ted_url",
+              "status"
+            ]
+          }
+        },
+        "high_relevance": {
+          "title": "High Relevance Tenders (Score > 70)",
+          "transformation": {
+            "fields": [
+              "notice_id",
+              "title",
+              "buyer_name",
+              "country", 
+              "relevance_score",
+              "ted_url"
+            ],
+            "filter": "item.relevance_score > 70"
+          }
+        }
+      }
+    }
+  }
+}
