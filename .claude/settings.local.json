@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__exa__web_search_exa",
+      "mcp__exa__crawling_exa",
+      "Bash(touch:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote add:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git push:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git remote:*)",
+      "WebFetch(domain:docs.ted.europa.eu)",
+      "Bash(python3:*)",
+      "Bash(docker build:*)"
+    ],
+    "deny": []
+  }
+}

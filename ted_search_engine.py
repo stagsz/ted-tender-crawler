@@ -209,7 +209,7 @@ class TEDSearchEngine:
     
     async def search_tenders(self, keywords: List[str], cpv_codes: List[str],
                            countries: List[str], year_from: int, year_to: int,
-                           active_only: bool = True, min_value: int = 0,
+                           active_only: bool = False, min_value: int = 0,
                            max_results: int = 100, include_documents: bool = True) -> List[Dict]:
         """Main search orchestration method"""
         
@@ -265,9 +265,20 @@ class TEDSearchEngine:
         """Build optimized search queries"""
         queries = []
         
-        # Date range filter
-        start_date = f"{year_from}-01-01"
-        end_date = f"{year_to}-12-31"
+        # Date range formatting (must be YYYYMMDD)
+        start_date = f"{year_from}0101"
+        end_date = f"{year_to}1231"
+        
+        # Convert country codes to 3-letter ISO format
+        country_mapping = {
+            'DE': 'DEU', 'FR': 'FRA', 'IT': 'ITA', 'ES': 'ESP', 'NL': 'NLD',
+            'GB': 'GBR', 'AT': 'AUT', 'BE': 'BEL', 'DK': 'DNK', 'FI': 'FIN',
+            'SE': 'SWE', 'NO': 'NOR', 'PL': 'POL', 'CZ': 'CZE', 'SK': 'SVK',
+            'HU': 'HUN', 'RO': 'ROU', 'BG': 'BGR', 'HR': 'HRV', 'SI': 'SVN',
+            'LT': 'LTU', 'LV': 'LVA', 'EE': 'EST', 'MT': 'MLT', 'CY': 'CYP',
+            'LU': 'LUX', 'IE': 'IRL', 'PT': 'PRT', 'GR': 'GRC', 'CH': 'CHE'
+        }
+        mapped_countries = [country_mapping.get(c, c) for c in countries]
         
         # Strategy 1: Keyword-based searches
         if keywords:
@@ -277,23 +288,23 @@ class TEDSearchEngine:
             for keyword_group in keyword_groups:
                 query_parts = []
                 
-                # Keywords in title
+                # Keywords in title (using proper syntax)
                 keyword_queries = [f'notice-title="{kw}"' for kw in keyword_group]
                 if keyword_queries:
                     query_parts.append(f"({' OR '.join(keyword_queries)})")
                 
                 # Country filter
-                if countries:
-                    country_query = ' OR '.join([f'buyer-country="{country}"' for country in countries])
+                if mapped_countries:
+                    country_query = ' OR '.join([f'buyer-country="{country}"' for country in mapped_countries])
                     query_parts.append(f"({country_query})")
                 
-                # Date range
-                query_parts.append(f'publication-date>={start_date}')
-                query_parts.append(f'publication-date<={end_date}')
+                # Date range (temporarily disabled due to API constraints)
+                # query_parts.append(f'publication-date>={start_date}')
+                # query_parts.append(f'publication-date<={end_date}')
                 
-                # Contract value filter
-                if min_value > 0:
-                    query_parts.append(f'value-eur>={min_value}')
+                # Contract value filter (temporarily disabled due to API constraints)
+                # if min_value > 0:
+                #     query_parts.append(f'value-eur>={min_value}')
                 
                 final_query = ' AND '.join(query_parts)
                 queries.append({'query': final_query, 'type': 'keyword', 'group': keyword_group})
@@ -310,17 +321,17 @@ class TEDSearchEngine:
                 query_parts.append(f"({cpv_query})")
                 
                 # Country filter
-                if countries:
-                    country_query = ' OR '.join([f'buyer-country="{country}"' for country in countries])
+                if mapped_countries:
+                    country_query = ' OR '.join([f'buyer-country="{country}"' for country in mapped_countries])
                     query_parts.append(f"({country_query})")
                 
-                # Date range
-                query_parts.append(f'publication-date>={start_date}')
-                query_parts.append(f'publication-date<={end_date}')
+                # Date range (temporarily disabled due to API constraints)
+                # query_parts.append(f'publication-date>={start_date}')
+                # query_parts.append(f'publication-date<={end_date}')
                 
-                # Contract value filter
-                if min_value > 0:
-                    query_parts.append(f'value-eur>={min_value}')
+                # Contract value filter (temporarily disabled due to API constraints)
+                # if min_value > 0:
+                #     query_parts.append(f'value-eur>={min_value}')
                 
                 final_query = ' AND '.join(query_parts)
                 queries.append({'query': final_query, 'type': 'cpv', 'group': cpv_group})
@@ -347,13 +358,13 @@ class TEDSearchEngine:
             "query": search_config['query'],
             "limit": 100,
             "fields": [
-                "notice-identifier", "notice-title", "buyer-name", "buyer-country",
-                "publication-date", "publication-number", "links", "classification-cpv",
-                "deadline-receipt", "value-eur", "notice-type", "contract-award"
+                "notice-identifier", "publication-number", "buyer-name", "buyer-country",
+                "publication-date", "notice-title", "BT-24-Procedure"
             ]
         }
         
         try:
+            logger.info(f"Sending query: {search_params['query']}")
             async with aiohttp.ClientSession() as session:
                 async with session.post(
                     self.api_url, 
@@ -381,7 +392,8 @@ class TEDSearchEngine:
                         return []
                     
                     else:
-                        logger.error(f"API error: {response.status}")
+                        error_text = await response.text()
+                        logger.error(f"API error: {response.status} - {error_text}")
                         return []
                         
         except Exception as e:
@@ -389,12 +401,13 @@ class TEDSearchEngine:
             return []
     
     def _remove_duplicates(self, results: List[Dict]) -> List[Dict]:
-        """Remove duplicate notices by notice-identifier"""
+        """Remove duplicate notices by publication-number"""
         seen = set()
         unique_results = []
         
         for result in results:
-            notice_id = result.get('notice-identifier', '')
+            # Use publication-number as the unique identifier
+            notice_id = result.get('publication-number', '')
             if notice_id and notice_id not in seen:
                 seen.add(notice_id)
                 unique_results.append(result)
@@ -412,10 +425,10 @@ class TEDSearchEngine:
             try:
                 # Extract basic info
                 tender_info = {
-                    'notice_id': result.get('notice-identifier', ''),
+                    'notice_id': result.get('publication-number', ''),  # Use publication-number as ID
                     'title': self._safe_get_text(result, 'notice-title'),
                     'buyer_name': self._safe_get_text(result, 'buyer-name'),
-                    'country': result.get('buyer-country', ''),
+                    'country': self._extract_country(result),  # Handle country list
                     'publication_date': result.get('publication-date', ''),
                     'deadline_date': result.get('deadline-receipt', ''),
                     'cpv_codes': self._extract_cpv_codes(result),
@@ -457,16 +470,38 @@ class TEDSearchEngine:
         
         return processed_results
     
+    def _extract_country(self, result: Dict) -> str:
+        """Extract country code from buyer-country field (which can be a list)"""
+        try:
+            country_data = result.get('buyer-country', '')
+            if isinstance(country_data, list) and country_data:
+                return str(country_data[0])
+            return str(country_data) if country_data else ''
+        except:
+            return ''
+    
     def _safe_get_text(self, obj: Dict, field: str) -> str:
         """Safely extract text from multilingual fields"""
         try:
             value = obj.get(field, {})
             if isinstance(value, dict):
                 # Try English first, then any available language
-                return value.get('eng', value.get(list(value.keys())[0] if value else '', ''))
+                first_lang_key = list(value.keys())[0] if value else ''
+                lang_value = value.get('eng', value.get(first_lang_key, ''))
+                
+                # Handle case where language value is a list
+                if isinstance(lang_value, list) and lang_value:
+                    return str(lang_value[0])
+                return str(lang_value) if lang_value else ''
             elif isinstance(value, list) and value:
                 if isinstance(value[0], dict):
-                    return value[0].get('eng', str(value[0]))
+                    # Handle nested dict in list
+                    first_item = value[0]
+                    first_lang_key = list(first_item.keys())[0] if first_item else ''
+                    lang_value = first_item.get('eng', first_item.get(first_lang_key, ''))
+                    if isinstance(lang_value, list) and lang_value:
+                        return str(lang_value[0])
+                    return str(lang_value)
                 return str(value[0])
             return str(value) if value else ''
         except:

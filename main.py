@@ -42,7 +42,7 @@ async def main():
         countries = actor_input.get('countries', ['DE', 'FR', 'IT'])
         year_from = actor_input.get('yearFrom', 2024)
         year_to = actor_input.get('yearTo', 2024)
-        active_only = actor_input.get('activeOnly', True)
+        active_only = actor_input.get('activeOnly', False)
         min_value = actor_input.get('minValue', 0)
         max_results = actor_input.get('maxResults', 100)
         output_format = actor_input.get('outputFormat', 'json')

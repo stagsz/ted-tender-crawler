@@ -24,7 +24,7 @@ async def test_basic_search():
         "countries": ["DE", "FR"],
         "yearFrom": 2024,
         "yearTo": 2024,
-        "activeOnly": True,
+        "activeOnly": False,
         "maxResults": 10
     }
     

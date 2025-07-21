@@ -54,7 +54,7 @@
       "title": "Active Tenders Only",
       "type": "boolean",
       "description": "Only return tenders that are still open for submission",
-      "default": true
+      "default": false
     },
     "minValue": {
       "title": "Minimum Contract Value (EUR)",
