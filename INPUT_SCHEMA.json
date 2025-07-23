@@ -106,6 +106,7 @@
       "title": "Scoring Criteria",
       "type": "object",
       "description": "Custom scoring weights for relevance calculation",
+      "editor": "json",
       "default": {
         "keywordMatch": 40,
         "cpvMatch": 30,
