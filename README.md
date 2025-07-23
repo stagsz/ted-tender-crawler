@@ -6,7 +6,7 @@ Professional Apify actor for searching and monitoring European public procuremen
 
 [![GitHub](https://img.shields.io/badge/GitHub-ted--tender--crawler-blue?logo=github)](https://github.com/stagsz/ted-tender-crawler)
 [![Apify Store](https://img.shields.io/badge/Apify-Store-orange?logo=apify)](https://apify.com/store)
-[![Revenue](https://img.shields.io/badge/Revenue%20Potential-€15K--50K/year-green)](#)
+
 
 ## 🚀 Features
 
