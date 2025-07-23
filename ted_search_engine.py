@@ -109,7 +109,6 @@ class IndustryTemplates:
             ],
             'cpv_codes': [
                 '90000000',  # Sewage, refuse, cleaning services
-                '90100000',  # Sewerage services
                 '90200000',  # Refuse collection services
                 '90300000',  # Cleaning services
                 '90700000',  # Environmental services
