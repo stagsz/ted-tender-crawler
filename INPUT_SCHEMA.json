@@ -110,6 +110,7 @@
         "keywordMatch": {
           "title": "Keyword Match Weight",
           "type": "integer",
+          "description": "Weight percentage for keyword matching in relevance scoring (0-100)",
           "minimum": 0,
           "maximum": 100,
           "default": 40
@@ -117,6 +118,7 @@
         "cpvMatch": {
           "title": "CPV Code Match Weight", 
           "type": "integer",
+          "description": "Weight percentage for CPV code matching in relevance scoring (0-100)",
           "minimum": 0,
           "maximum": 100,
           "default": 30
@@ -124,6 +126,7 @@
         "countryMatch": {
           "title": "Country Preference Weight",
           "type": "integer", 
+          "description": "Weight percentage for country preference in relevance scoring (0-100)",
           "minimum": 0,
           "maximum": 100,
           "default": 20
@@ -131,6 +134,7 @@
         "valueMatch": {
           "title": "Contract Value Weight",
           "type": "integer",
+          "description": "Weight percentage for contract value matching in relevance scoring (0-100)",
           "minimum": 0,
           "maximum": 100,
           "default": 10

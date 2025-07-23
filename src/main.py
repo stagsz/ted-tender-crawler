@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 TED.EU Tender Search Actor
-Generic actor for searching European public procurement tenders with customizable filtering
+Generic actor for searching European public procurement tenders with
+customizable filtering
 """
 
 import asyncio
