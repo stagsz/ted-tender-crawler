@@ -7,8 +7,13 @@ customizable filtering
 
 import asyncio
 import logging
+import sys
+import os
 from datetime import datetime
 from apify import Actor
+
+# Add the parent directory to the Python path to import ted_search_engine
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from ted_search_engine import TEDSearchEngine, IndustryTemplates
 
 # Configure logging
