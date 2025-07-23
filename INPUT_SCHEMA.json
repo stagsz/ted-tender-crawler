@@ -106,38 +106,40 @@
       "title": "Scoring Criteria",
       "type": "object",
       "description": "Custom scoring weights for relevance calculation",
+      "default": {
+        "keywordMatch": 40,
+        "cpvMatch": 30,
+        "countryMatch": 20,
+        "valueMatch": 10
+      },
       "properties": {
         "keywordMatch": {
           "title": "Keyword Match Weight",
           "type": "integer",
           "description": "Weight percentage for keyword matching in relevance scoring (0-100)",
           "minimum": 0,
-          "maximum": 100,
-          "default": 40
+          "maximum": 100
         },
         "cpvMatch": {
           "title": "CPV Code Match Weight", 
           "type": "integer",
           "description": "Weight percentage for CPV code matching in relevance scoring (0-100)",
           "minimum": 0,
-          "maximum": 100,
-          "default": 30
+          "maximum": 100
         },
         "countryMatch": {
           "title": "Country Preference Weight",
           "type": "integer", 
           "description": "Weight percentage for country preference in relevance scoring (0-100)",
           "minimum": 0,
-          "maximum": 100,
-          "default": 20
+          "maximum": 100
         },
         "valueMatch": {
           "title": "Contract Value Weight",
           "type": "integer",
           "description": "Weight percentage for contract value matching in relevance scoring (0-100)",
           "minimum": 0,
-          "maximum": 100,
-          "default": 10
+          "maximum": 100
         }
       }
     }
