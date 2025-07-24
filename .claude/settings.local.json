@@ -20,7 +20,8 @@
       "Bash(mv /mnt/c/Users/staff/anthropicFun/TED_Apify/debug_test.py /mnt/c/Users/staff/anthropicFun/TED_Apify/development/)",
       "Bash(mv /mnt/c/Users/staff/anthropicFun/TED_Apify/docker_test_input.json /mnt/c/Users/staff/anthropicFun/TED_Apify/development/)",
       "Bash(mv /mnt/c/Users/staff/anthropicFun/TED_Apify/PROJECT_OVERVIEW.md /mnt/c/Users/staff/anthropicFun/TED_Apify/development/)",
-      "Bash(mv /mnt/c/Users/staff/anthropicFun/TED_Apify/DEPLOYMENT.md /mnt/c/Users/staff/anthropicFun/TED_Apify/development/)"
+      "Bash(mv /mnt/c/Users/staff/anthropicFun/TED_Apify/DEPLOYMENT.md /mnt/c/Users/staff/anthropicFun/TED_Apify/development/)",
+      mcp__puppeteer__puppeteer_navigate
     ],
     "deny": []
   }
