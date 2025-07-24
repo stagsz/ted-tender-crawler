@@ -1,9 +1,0 @@
-{
-  "activeOnly": false,
-  "countries": [
-    "DE"
-  ],
-  "includeDocuments": true,
-  "industryTemplate": "it-software",
-  "yearTo": 2025
-}
