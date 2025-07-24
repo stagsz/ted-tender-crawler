@@ -1,7 +1,0 @@
-{
-  "name": "ted-tender-crawler",
-  "version": "1.0.0",
-  "buildTag": "latest",
-  "env": null,
-  "template": "python"
-}
