@@ -44,7 +44,7 @@ async def test_cpv_code(cpv_code: str) -> Dict:
                         'status': 'VALID',
                         'http_status': 200,
                         'results': count,
-                        'message': f'✅ Valid - Found {count} tenders'
+                        'message': f'[VALID] Found {count} tenders'
                     }
                 else:
                     error_text = await response.text()
@@ -53,7 +53,7 @@ async def test_cpv_code(cpv_code: str) -> Dict:
                         'status': 'INVALID',
                         'http_status': status,
                         'results': 0,
-                        'message': f'❌ API Error: {error_text[:200]}'
+                        'message': f'[INVALID] API Error: {error_text[:200]}'
                     }
 
     except Exception as e:
@@ -62,7 +62,7 @@ async def test_cpv_code(cpv_code: str) -> Dict:
             'status': 'ERROR',
             'http_status': 0,
             'results': 0,
-            'message': f'⚠️ Exception: {str(e)[:200]}'
+            'message': f'[ERROR] Exception: {str(e)[:200]}'
         }
 
 async def test_all_cpv_codes(cpv_codes: List[str]):
@@ -96,17 +96,17 @@ async def test_all_cpv_codes(cpv_codes: List[str]):
     invalid_codes = [r for r in results if r['status'] == 'INVALID']
     error_codes = [r for r in results if r['status'] == 'ERROR']
 
-    print(f"\n✅ Valid codes: {len(valid_codes)}/{len(cpv_codes)}")
-    print(f"❌ Invalid codes: {len(invalid_codes)}/{len(cpv_codes)}")
-    print(f"⚠️ Errors: {len(error_codes)}/{len(cpv_codes)}")
+    print(f"\n[VALID] Valid codes: {len(valid_codes)}/{len(cpv_codes)}")
+    print(f"[INVALID] Invalid codes: {len(invalid_codes)}/{len(cpv_codes)}")
+    print(f"[ERROR] Errors: {len(error_codes)}/{len(cpv_codes)}")
 
     if invalid_codes:
-        print("\n🔴 INVALID CPV CODES (Not supported by TED API):")
+        print("\nINVALID CPV CODES (Not supported by TED API):")
         for result in invalid_codes:
             print(f"  - {result['cpv_code']}")
 
     if valid_codes:
-        print("\n✅ VALID CPV CODES (Supported by TED API):")
+        print("\nVALID CPV CODES (Supported by TED API):")
         for result in valid_codes:
             print(f"  - {result['cpv_code']} ({result['results']} tenders found)")
 
@@ -114,7 +114,7 @@ async def test_all_cpv_codes(cpv_codes: List[str]):
     with open('cpv_validation_results.json', 'w') as f:
         json.dump(results, f, indent=2)
 
-    print("\n📄 Detailed results saved to: cpv_validation_results.json")
+    print("\nDetailed results saved to: cpv_validation_results.json")
 
 if __name__ == '__main__':
     # Your CPV codes from the configuration
