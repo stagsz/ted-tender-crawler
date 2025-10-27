@@ -1,0 +1,44 @@
+[
+  {
+    "cpv_code": "09000000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  },
+  {
+    "cpv_code": "42000000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  },
+  {
+    "cpv_code": "45000000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  },
+  {
+    "cpv_code": "90000000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  },
+  {
+    "cpv_code": "90700000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  },
+  {
+    "cpv_code": "71000000",
+    "status": "ERROR",
+    "http_status": 0,
+    "results": 0,
+    "message": "\u26a0\ufe0f Exception: Cannot connect to host api.ted.europa.eu:443 ssl:default [Temporary failure in name resolution]"
+  }
+]
