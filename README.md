@@ -8,18 +8,18 @@ Professional Apify actor for searching and monitoring European public procuremen
 [![Apify Store](https://img.shields.io/badge/Apify-Store-orange?logo=apify)](https://apify.com/store)
 
 
-## 🚀 Features
+##  Features
 
-- **🔍 Flexible Search**: Custom keywords, CPV codes, countries, and date ranges
-- **📊 Smart Scoring**: Configurable relevance scoring based on your criteria  
-- **🏭 Industry Templates**: Pre-configured searches for common sectors
-- **⚡ Real-time Data**: Direct API access to TED.EU database
-- **📈 Active Filtering**: Only show tenders still open for submission
-- **💰 Value Filtering**: Filter by minimum contract values
-- **🔗 Document Links**: Access to official tender documents
-- **📋 Multiple Formats**: JSON, CSV, Excel outputs
+- ** Flexible Search**: Custom keywords, CPV codes, countries, and date ranges
+- ** Smart Scoring**: Configurable relevance scoring based on your criteria  
+- ** Industry Templates**: Pre-configured searches for common sectors
+- ** Real-time Data**: Direct API access to TED.EU database
+- ** Active Filtering**: Only show tenders still open for submission
+- ** Value Filtering**: Filter by minimum contract values
+- ** Document Links**: Access to official tender documents
+- ** Multiple Formats**: JSON, CSV, Excel outputs
 
-## 💼 Perfect For
+##  Perfect For
 
 - **Consulting Firms** seeking government contracts
 - **SME Businesses** expanding into EU markets  
@@ -28,7 +28,7 @@ Professional Apify actor for searching and monitoring European public procuremen
 - **Legal Firms** tracking opportunities for clients
 - **Startups** seeking government contracts
 
-## 📋 Input Configuration
+##  Input Configuration
 
 ### Basic Settings
 ```json
@@ -105,7 +105,7 @@ Each tender includes:
 }
 ```
 
-## 🎯 Relevance Scoring
+##  Relevance Scoring
 
 Smart scoring algorithm considers:
 
@@ -116,7 +116,7 @@ Smart scoring algorithm considers:
 
 Scores range from 0-100, with 70+ indicating high relevance.
 
-## 📈 Usage Examples
+##  Usage Examples
 
 ### Find IT Consulting Opportunities in Germany
 ```json
@@ -148,7 +148,7 @@ Scores range from 0-100, with 70+ indicating high relevance.
 }
 ```
 
-## 🔧 Technical Details
+##  Technical Details
 
 - **Data Source**: TED.EU official API
 - **Update Frequency**: Real-time API access
@@ -156,7 +156,7 @@ Scores range from 0-100, with 70+ indicating high relevance.
 - **Deduplication**: Automatic removal of duplicate notices
 - **Error Handling**: Robust error recovery and logging
 
-## 💡 Pro Tips
+##  Pro Tips
 
 1. **Use Industry Templates** for quick setup with proven keyword sets
 2. **Combine Keywords + CPV** for best coverage and relevance
@@ -164,14 +164,14 @@ Scores range from 0-100, with 70+ indicating high relevance.
 4. **Enable Active Only** to avoid expired tenders
 5. **Adjust Scoring Weights** based on your priorities
 
-## 📞 Support & Links
+##  Support & Links
 
 - **GitHub Repository**: [ted-tender-crawler](https://github.com/stagsz/ted-tender-crawler)
 - **Issues & Features**: [GitHub Issues](https://github.com/stagsz/ted-tender-crawler/issues)
 - **Documentation**: Comprehensive guides and examples in repository
 - **Apify Store**: [Coming Soon - TED Tender Crawler](https://apify.com/store)
 
-## 🏆 Success Stories
+##  Success Stories
 
 > *"Found 3 major consulting contracts worth €2M+ in first month using TED Tender Crawler"*  
 > — Management Consulting Firm
@@ -184,12 +184,13 @@ Scores range from 0-100, with 70+ indicating high relevance.
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
-1. **Try the Actor**: [Deploy on Apify](https://apify.com/store) (Coming Soon)
+1. **Try the Actor**: [Deploy on Apify](https://apify.com/store) 
 2. **View Source**: [GitHub Repository](https://github.com/stagsz/ted-tender-crawler)
 3. **Local Testing**: Clone repo and run `python test_local.py`
 
 **Start monitoring European procurement opportunities today!** 🇪🇺
 
 *Built with ❤️ for the European business community | Powered by Apify*
+
