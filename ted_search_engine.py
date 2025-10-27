@@ -267,8 +267,10 @@ class TEDSearchEngine:
         # Date range formatting (must be YYYYMMDD)
         start_date = f"{year_from}0101"
         end_date = f"{year_to}1231"
-        
-        # Convert country codes to 3-letter ISO format
+
+        # Convert country codes to 3-letter ISO 3166-1 alpha-3 format
+        # Standard format is 3-letter codes (DEU, FRA, etc.)
+        # This mapping provides backward compatibility for 2-letter codes
         country_mapping = {
             'DE': 'DEU', 'FR': 'FRA', 'IT': 'ITA', 'ES': 'ESP', 'NL': 'NLD',
             'GB': 'GBR', 'AT': 'AUT', 'BE': 'BEL', 'DK': 'DNK', 'FI': 'FIN',
@@ -277,6 +279,7 @@ class TEDSearchEngine:
             'LT': 'LTU', 'LV': 'LVA', 'EE': 'EST', 'MT': 'MLT', 'CY': 'CYP',
             'LU': 'LUX', 'IE': 'IRL', 'PT': 'PRT', 'GR': 'GRC', 'CH': 'CHE'
         }
+        # If 3-letter code is provided, it passes through as-is; 2-letter codes get converted
         mapped_countries = [country_mapping.get(c, c) for c in countries]
         
         # Strategy 1: Keyword-based searches

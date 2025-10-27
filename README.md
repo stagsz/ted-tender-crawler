@@ -34,7 +34,7 @@ Professional Apify actor for searching and monitoring European public procuremen
 ```json
 {
   "searchKeywords": ["software development", "IT consulting"],
-  "countries": ["DE", "FR", "IT"],
+  "countries": ["DEU", "FRA", "ITA"],
   "yearFrom": 2024,
   "yearTo": 2024,
   "maxResults": 100
@@ -46,7 +46,7 @@ Professional Apify actor for searching and monitoring European public procuremen
 {
   "searchKeywords": ["cloud services", "digital transformation"],
   "cpvCodes": ["72000000", "72200000"],
-  "countries": ["DE", "FR", "IT", "ES", "NL"],
+  "countries": ["DEU", "FRA", "ITA", "ESP", "NLD"],
   "yearFrom": 2024,
   "yearTo": 2024,
   "activeOnly": true,
@@ -87,7 +87,7 @@ Each tender includes:
   "notice_id": "123456-2024",
   "title": "IT Infrastructure Modernization",
   "buyer_name": "Ministry of Digital Affairs",
-  "country": "DE",
+  "country": "DEU",
   "publication_date": "2024-01-15",
   "deadline_date": "2024-02-15",
   "estimated_value_eur": 250000,
@@ -122,7 +122,7 @@ Scores range from 0-100, with 70+ indicating high relevance.
 ```json
 {
   "industryTemplate": "it-software",
-  "countries": ["DE"],
+  "countries": ["DEU"],
   "minValue": 100000,
   "activeOnly": true
 }
@@ -131,8 +131,8 @@ Scores range from 0-100, with 70+ indicating high relevance.
 ### Monitor Construction Projects in EU
 ```json
 {
-  "industryTemplate": "construction", 
-  "countries": ["DE", "FR", "IT", "ES", "NL"],
+  "industryTemplate": "construction",
+  "countries": ["DEU", "FRA", "ITA", "ESP", "NLD"],
   "yearFrom": 2024,
   "yearTo": 2024
 }
@@ -143,7 +143,7 @@ Scores range from 0-100, with 70+ indicating high relevance.
 {
   "searchKeywords": ["medical devices", "diagnostic equipment", "hospital equipment"],
   "cpvCodes": ["33100000", "33600000"],
-  "countries": ["DE", "AT", "CH"],
+  "countries": ["DEU", "AUT", "CHE"],
   "minValue": 50000
 }
 ```

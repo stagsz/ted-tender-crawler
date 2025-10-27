@@ -26,12 +26,12 @@
     "countries": {
       "title": "Countries",
       "type": "array",
-      "description": "ISO country codes to search in (e.g., DE, FR, IT, ES)",
+      "description": "ISO 3166-1 alpha-3 country codes to search in (e.g., DEU, FRA, ITA, ESP)",
       "items": {
         "type": "string",
-        "pattern": "^[A-Z]{2}$"
+        "pattern": "^[A-Z]{3}$"
       },
-      "default": ["DE", "FR", "IT", "ES", "NL"],
+      "default": ["DEU", "FRA", "ITA", "ESP", "NLD"],
       "editor": "stringList"
     },
     "yearFrom": {

@@ -45,7 +45,7 @@ async def main():
         # Validate and set defaults
         search_keywords = actor_input.get('searchKeywords', ['consulting', 'services'])
         cpv_codes = actor_input.get('cpvCodes', [])
-        countries = actor_input.get('countries', ['DE', 'FR', 'IT'])
+        countries = actor_input.get('countries', ['DEU', 'FRA', 'ITA'])
         year_from = actor_input.get('yearFrom', 2024)
         year_to = actor_input.get('yearTo', 2024)
         active_only = actor_input.get('activeOnly', False)
